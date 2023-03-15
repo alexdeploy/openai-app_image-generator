@@ -1,9 +1,9 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
   <main>
-    <TheWelcome />
+    <FormGenerator />
   </main>
 </template>
+
+<script setup>
+import FormGenerator from '../components/FormGenerator.vue'
+</script>
