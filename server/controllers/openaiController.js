@@ -13,13 +13,18 @@ const openai = new OpenAIApi(configuration);
  */
 
 const generateImage = async (req, res) => {
+
+    const { prompt, size } = req.body; // props sended from the client
+
+    const imageSize = size === 'small' ? '256x256' : size === 'medium' ? '512x512' : '1024x1024';
+
     try{
         // get the response from openai
         // https://beta.openai.com/docs/api-reference/images/create
         const response = await openai.createImage({
-            prompt: 'Cat with red hat',
+            prompt: prompt,
             n: 1,
-            size: '512x512'
+            size: imageSize
         })
 
         // generate image url
