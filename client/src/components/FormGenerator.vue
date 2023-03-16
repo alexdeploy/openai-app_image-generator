@@ -1,26 +1,30 @@
 <template>
-    <main>
+    <main class="p-5">
         <section>
             <form id="generate-form" class="flex flex-col">
-                <h1 class="text-4xl py-5 flex justify-center">Describe an image</h1>
+                <h1 class="text-6xl py-5 font-sf_bold text-center">
+                    <span>AI</span> Image <span>Generator</span>
+                </h1>
+                <h2 class="text-xl font-sf_regular py-5">Describe the image you would like to generate 👇</h2>
                 <div class="form-control flex justify-center">
                     <input type="text" id="prompt" placeholder="Enter Text">
                 </div>
-                <div class="form-control flex justify-center py-5">
+                <div class="form-control flex justify-between py-5">
+                    <label for="size">Select size</label>
                     <select name="size" id="size">
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
                     </select>
                 </div>
-                <button type="submit" class="submit-btn">Generate</button>
+                <button type="submit" class="submit-btn bg-blue-500 hover:bg-blue-700 text-white font-sf_bold tracking-wide py-3 px-6 rounded-lg w-36 self-center">Generate</button>
             </form>
         </section>
 
-        <section class="image">
-            <div class="image-container">
+        <section class="image py-10">
+            <div class="image-container flex justify-center">
                 <h2 class="msg"></h2>
-                <img src="" alt="" id="image">
+                <img src="../assets/images/robot.gif" alt="" id="image" class="w-60">
             </div>
         </section>
 
@@ -68,5 +72,16 @@ export default {
 </script>
 
 <style>
+
+input {
+  border: 1px solid #2b2b2b;
+  background-color: #000000;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 16px;
+  color: #929292;
+  outline: none;
+  width: 400px;
+}
 
 </style>
