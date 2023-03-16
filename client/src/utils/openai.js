@@ -20,7 +20,7 @@ async function generateImageRequest(prompt, size){
 
         /* check if response is success */
         if (!response.ok) {
-            this.showLoading();
+            /* this.showLoading(); */
             throw new Error('Something went wrong');
         }
 
@@ -34,7 +34,7 @@ async function generateImageRequest(prompt, size){
 
     } catch (error) {
         this.showLoading();
-        document.querySelector('.msg').textContent = "asdasdsad";
+        document.querySelector('.msg').textContent = error;
     }
 }
 
