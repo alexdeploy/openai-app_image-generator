@@ -2,7 +2,13 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}", ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sf_bold: ['San Francisco Bold'],
+        sf_regular: ['San Francisco Regular']
+
+      }
+    },
   },
   plugins: [],
 }
