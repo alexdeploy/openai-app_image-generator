@@ -3,24 +3,38 @@
 @tailwind utilities;
 
 html {
-  background-color: #f4f4f4;
+  background-color: #000;
 }
 h1 {
-  color: #333;
+  color: #ededed;
 }
 
-input {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
-  font-size: 16px;
-  color: #333;
-  outline: none;
-  width: 400px;
+h2 {
+  color: #ededed;
+}
+
+h1 > span {
+  background: -webkit-linear-gradient(lch(45% 70 270), lch(45% 70 300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label {
+  color: #ededed;
 }
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
   font-weight: normal;
+}
+
+@font-face {
+  font-family: "San Francisco Bold";
+  src: url("./fonts/san-francisco-display-bold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "San Francisco Regular";
+  src: url("./fonts/san-francisco-display-regular.ttf") format('truetype');
 }
