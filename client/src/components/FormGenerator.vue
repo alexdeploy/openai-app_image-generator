@@ -24,7 +24,7 @@
         <section class="image py-10">
             <div class="image-container flex justify-center">
                 <h2 class="msg"></h2>
-                <img src="../assets/images/robot.gif" alt="" id="image" class="w-60">
+                <img src="" alt="" id="image" class="w-60">
             </div>
         </section>
 
