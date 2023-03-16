@@ -7,11 +7,11 @@
                 </h1>
                 <h2 class="text-xl font-sf_regular py-5">Describe the image you would like to generate 👇</h2>
                 <div class="form-control flex justify-center">
-                    <input type="text" id="prompt" placeholder="Enter Text">
+                    <input type="text" id="prompt" placeholder="Polar bear riding a bike">
                 </div>
                 <div class="form-control flex justify-between py-5">
                     <label for="size">Select size</label>
-                    <select name="size" id="size">
+                    <select name="size" id="size" class="px-2 py-1 text-gray-300">
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
@@ -73,6 +73,11 @@ export default {
 
 <style>
 
+#prompt {
+    padding: 12px;
+    color: #cbcbcb;
+}
+
 input {
   border: 1px solid #2b2b2b;
   background-color: #000000;
@@ -82,6 +87,21 @@ input {
   color: #929292;
   outline: none;
   width: 400px;
+}
+
+input::placeholder{
+    color: #ffffff87
+}
+
+select {
+    border: 1px solid #2b2b2b;
+    background-color: #000000;
+    border-radius: 7px;
+    padding: 12px;
+}
+
+select option {
+    color: #929292;
 }
 
 </style>
