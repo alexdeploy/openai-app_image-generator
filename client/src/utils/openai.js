@@ -1,4 +1,6 @@
-const GENERATE_IMAGE_URL = 'http://localhost:5000/openai/generateimage';
+const GENERATE_IMAGE_URL_DEV = 'http://localhost:5000/openai/generateimage';
+const GENERATE_IMAGE_URL_PROD = 'https://openai-app-image-generator.vercel.app/openai/generateimage';
+
 /**
  * Request to OpenAI API
  * @param {*} prompt 
@@ -10,7 +12,7 @@ async function generateImageRequest(prompt, size){
 
         this.showLoading()
 
-        const response = await fetch(GENERATE_IMAGE_URL, {
+        const response = await fetch(GENERATE_IMAGE_URL_PROD, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
