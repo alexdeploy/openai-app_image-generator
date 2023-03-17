@@ -11,6 +11,7 @@ async function generateImageRequest(prompt, size){
     try {
 
         this.showLoading()
+        document.querySelector('.submit-btn').setAttribute('disabled', true);
 
         const response = await fetch(GENERATE_IMAGE_URL_PROD, {
             method: 'POST',
@@ -31,6 +32,7 @@ async function generateImageRequest(prompt, size){
         const imageUrl = data.data;
         
         document.querySelector('#image').setAttribute('src', imageUrl);
+        document.querySelector('.submit-btn').toggleAttribute("disabled");
 
         this.showLoading();
 

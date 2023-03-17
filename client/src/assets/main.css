@@ -8,10 +8,10 @@ html {
 h1 {
   color: #ededed;
 }
-
+/* 
 h2 {
-  color: #ededed;
-}
+  color: #000;
+} */
 
 h1 > span {
   background: -webkit-linear-gradient(lch(45% 70 270), lch(45% 70 300));

@@ -1,34 +1,39 @@
 <template>
-    <main class="p-5">
-        <section>
-            <form id="generate-form" class="flex flex-col">
-                <h1 class="text-6xl py-5 font-sf_bold text-center">
+    <main data-aos="fade-in" class="p-5 max-w-5xl m-auto">
+        <section class="flex flex-col border-gray-800 border-1 border-b border-dashed">
+            <h1 class="text-6xl py-5 font-sf_bold text-center">
                     <span>AI</span> Image <span>Generator</span>
-                </h1>
-                <h2 class="text-xl font-sf_regular py-5">Describe the image you would like to generate 👇</h2>
+            </h1>
+            <form id="generate-form" class="flex flex-col max-w-3xl sm:mx-auto">
+                <h2 class="text-xl font-sf_regular py-5 text-gray-500">Describe the image you would like to generate 👇</h2>
                 <div class="form-control flex justify-center">
                     <input type="text" id="prompt" placeholder="Polar bear riding a bike">
+                    <button type="submit" class="submit-btn bg-blue-500 flex justify-center">
+                        <img src="../assets/icons/send.svg" alt="" class="w-6 self-center">
+                    </button>
                 </div>
                 <div class="form-control flex justify-between py-5">
                     <label for="size">Select size</label>
                     <select name="size" id="size" class="px-2 py-1 text-gray-300">
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
-                        <option value="large">Large</option>
+                        <option value="large" selected="selected">Large</option>
                     </select>
                 </div>
-                <button type="submit" class="submit-btn bg-blue-500 hover:bg-blue-700 text-white font-sf_bold tracking-wide py-3 px-6 rounded-lg w-36 self-center">Generate</button>
+                <!-- <button type="submit" class=" bg-blue-500 hover:bg-blue-700 text-white font-sf_bold tracking-wide py-3 px-6 rounded-lg w-36 self-center">Generate</button> -->
             </form>
         </section>
 
-        <section class="image py-10">
-            <div class="image-container flex justify-center">
+        <Loading />
+
+        <section class="image flex justify-center py-10">
+            <div class="image-container">
                 <h2 class="msg"></h2>
-                <img src="" alt="" id="image" class="w-60">
+                <img src="" alt="" id="image" class="w-full rounded-xl">
             </div>
         </section>
 
-        <Loading />
+        
 
     </main>
 </template>
@@ -76,6 +81,8 @@ export default {
 #prompt {
     padding: 12px;
     color: #cbcbcb;
+    border-radius: 10px 0px 0px 10px;
+    height: 50px;
 }
 
 input {
@@ -102,6 +109,19 @@ select {
 
 select option {
     color: #929292;
+}
+
+.submit-btn {
+    border-radius: 0px 10px 10px 0px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+}
+
+button:disabled,
+button[disabled]{
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 </style>

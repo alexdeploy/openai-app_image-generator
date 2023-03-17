@@ -1,6 +1,6 @@
 <template>
-  <div id="loading" class="full-window hide">
-    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <div id="loading" class="w-full hide py-10">
+    <div class="lds-spinner mx-auto"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div>
 </template>
 
@@ -11,17 +11,9 @@ export default {
 </script>
 
 <style>
-.full-window {
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+/* .full-window {
+
+} */
 .hide {
   display: none;
 }
