@@ -44,7 +44,7 @@ import { generateImageRequest } from '../utils/openai.js'
 
 export default {
   components: { Loading },
-    name: 'FormGenerator',
+    name: 'ImageGenerator',
     methods: {
         showLoading(){
             document.querySelector('#loading').classList.toggle('hide');

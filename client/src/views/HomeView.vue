@@ -1,9 +1,12 @@
 <template>
   <main>
-    <FormGenerator />
+    <ImageGenerator />
+<!--     <TechCard /> -->
   </main>
 </template>
 
 <script setup>
-import FormGenerator from '../components/FormGenerator.vue'
+import ImageGenerator from '../components/ImageGenerator.vue'
+import ImageEditor from '../components/ImageEditor.vue'
+import TechCard from '../components/TechCard.vue'
 </script>
