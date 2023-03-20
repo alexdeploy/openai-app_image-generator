@@ -1,12 +1,9 @@
 <template>
-  <main>
-    <ImageGenerator />
-<!--     <TechCard /> -->
-  </main>
+    <main data-aos="fade-in" class="px-5 max-w-5xl m-auto">
+        <Hero />
+    </main>
 </template>
 
 <script setup>
-import ImageGenerator from '../components/ImageGenerator.vue'
-import ImageEditor from '../components/ImageEditor.vue'
-import TechCard from '../components/TechCard.vue'
+import Hero from '../components/home/Hero.vue'
 </script>
