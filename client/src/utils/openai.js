@@ -10,9 +10,6 @@ async function generateImageRequest(prompt, size){
     
     try {
 
-        this.showLoading()
-        document.querySelector('.submit-btn').setAttribute('disabled', true);
-
         const response = await fetch(GENERATE_IMAGE_URL_PROD, {
             method: 'POST',
             headers: {
@@ -27,18 +24,11 @@ async function generateImageRequest(prompt, size){
             throw new Error('Something went wrong');
         }
 
-        const data = await response.json();
-
-        const imageUrl = data.data;
-        
-        document.querySelector('#image').setAttribute('src', imageUrl);
-        document.querySelector('.submit-btn').toggleAttribute("disabled");
-
-        this.showLoading();
+        return await response.json();
 
     } catch (error) {
-        this.showLoading();
-        document.querySelector('.msg').textContent = error;
+        console.log(error);
+        /* document.querySelector('.msg').textContent = error; */
     }
 }
 
