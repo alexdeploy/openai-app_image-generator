@@ -14,9 +14,7 @@ export default {
 /* .full-window {
 
 } */
-.hide {
-  display: none;
-}
+
 .lds-spinner {
   position: relative;
   width: 80px;
