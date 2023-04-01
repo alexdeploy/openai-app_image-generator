@@ -1,6 +1,7 @@
 <template>
     <div class="pt-24">
         <Loading />
+        <Toast v-if="show" :message="toastMessage" />
         <h2 class="text-md font-sf_regular py-5">Describe the image you would like to generate 👇</h2>
 <!-- 
         <div id="blackboard" class="w-full rounded-xl bg-gray-900 -z-10 flex justify-center">
@@ -50,13 +51,16 @@
 import Loading from './Loading.vue'
 import Options from './Options.vue'
 import { generateImageRequest } from '../utils/openai.js'
+import Toast from './Toast.vue'
 
 export default {
-  components: { Loading, Options },
+  components: { Loading, Options, Toast },
     name: 'ImageGenerator',
     data() {
         return {
-            activeOptions: []
+            activeOptions: [],
+            toastMessage: '',
+            show: false
         }
     },
     methods: {
@@ -75,6 +79,14 @@ export default {
             document.querySelectorAll('#value').forEach(option => {
                 option.classList.remove('active');
             })
+        },
+        showToast(message) {
+            console.log('showToast', message);
+            this.show = true;
+            this.toastMessage = message;
+            setTimeout(() => {
+                this.show = false;
+            }, 3000);
         },
         draw(response){
             const imageUrl = response.data;
@@ -104,7 +116,7 @@ export default {
 
             /* document.querySelector('#image').setAttribute('src', imageUrl); */
             this.hideLoading();
-            document.querySelector('.submit-btn').removeAttribute('disabled');
+            /* document.querySelector('.submit-btn').removeAttribute('disabled'); */
         },
         onSubmit(event){
 
@@ -138,16 +150,6 @@ export default {
 
             console.log(prompt)
 
-            /* set thinking */
-            // check if text is empty or meet some requisites.
-            
-            document.querySelector('.submit-btn').setAttribute('disabled', true);
-            /* document.querySelector('#empty-msg').classList.add('hidden'); */
-
-            // check if options has 'hide' or 'show' class and toggle them
-            /* if(document.querySelector('.options').classList.contains('show')){
-                this.showOptions();
-            } */
             const size = 'large' // provisional
             try {
                 // generate image request and returns the image url
@@ -159,6 +161,7 @@ export default {
             } catch (error) {
                 this.hideLoading();
                 // show error message to user through a toast
+                this.toastMessage = error;
                 console.log(error);
             }
         },

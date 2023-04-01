@@ -20,14 +20,16 @@ async function generateImageRequest(prompt, size){
 
         /* check if response is success */
         if (!response.ok) {
-            /* this.showLoading(); */
-            throw new Error('Something went wrong');
+            this.hideLoading();
+            this.showToast('Something went wrong, please try again later');
+            /* throw new Error('Something went wrong'); */
         }
 
         return await response.json();
 
     } catch (error) {
         console.log(error);
+        
         /* document.querySelector('.msg').textContent = error; */
     }
 }
