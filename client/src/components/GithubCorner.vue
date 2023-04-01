@@ -29,7 +29,7 @@ export default {
  * ---------------------------------------------- */
 
  .github-corner {
-  fill: #951e89;
+  fill: #000000;
   color: #fff;
   position: absolute;
   top: 0;
