@@ -1,12 +1,8 @@
 # Open AI Image Generator
 
-This repository is a simple app built with the <a href="https://platform.openai.com/docs/api-reference">OpenAI API</a> to generate images using artificial intelligence. It has a frontend developed with Vue (client file) and a backend with Express (server file).
+This repository is a simple app built with the <a href="https://platform.openai.com/docs/api-reference">OpenAI API</a> to generate images using artificial intelligence. It has a frontend developed with <a href="https://vuejs.org/">Vue</a> (client file) and a backend with <a href="https://expressjs.com/es/">Express</a> (server file).
 
-## Funcionamiento
-
-La App está compuesta de una sola página en la ruta inicial `"/"`.
-
-A través de un input (desktop) o textarea (mobile) recoge una cadena de caracteres introducida por el usuario. En el caso de que la cadena esté vacía, la aplicación avisará al usuario y no habrá acciones previas.
+## Functionallity
 
 The app just has a single page on the initial route "/".
 
@@ -52,7 +48,7 @@ cd client
 yarn
 ````
 
-3. Install server dependencies
+4. Install server dependencies
 
 ````sh
 cd ../server
@@ -62,7 +58,7 @@ cd ../server
 yarn
 ````
 
-4. Configure enviroment variables
+5. Configure enviroment variables
 
 Create `.env` file inside `server/` and set the next values:
 ````
@@ -72,7 +68,7 @@ OPENAI_API_KEY="Your_API_Key_Here"
 
 Note: If your dont know how to get your API KEY, follow this <a href="https://elephas.app/blog/how-to-create-openai-api-keys-cl5c4f21d281431po7k8fgyol0">guide</a>, or if you already have and OpenAI Account, create an API Key <a href="https://platform.openai.com/account/api-keys">here</a>
 
-4. Run server (development mode)
+6. Run server (development mode)
 
 ````sh
 yarn dev
@@ -80,7 +76,7 @@ yarn dev
 
 Server should be running on https://localhost:5000/
 
-5. Run client (development mode)
+7. Run client (development mode)
 
 ````sh
 cd ../client
