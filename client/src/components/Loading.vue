@@ -1,5 +1,5 @@
 <template>
-  <div id="loading" class="w-full hide py-10">
+  <div id="loading" class="w-full z-20 hide fixed top-0 left-0 h-screen bg-white">
     <div class="lds-spinner mx-auto"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div>
 </template>
@@ -17,6 +17,7 @@ export default {
 
 .lds-spinner {
   position: relative;
+  top: 50%;
   width: 80px;
   height: 80px;
 }
@@ -33,7 +34,7 @@ export default {
   width: 6px;
   height: 18px;
   border-radius: 20%;
-  background: #fff;
+  background: #2b2b2b;
 }
 .lds-spinner div:nth-child(1) {
   transform: rotate(0deg);
