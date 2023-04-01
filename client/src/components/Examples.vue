@@ -1,9 +1,9 @@
 <template>
-  <section class="pt-20">
+  <section id="examples" class="pt-20">
     <h2 class="text-md font-sf_bold tracking-normal py-5">EXAMPLES</h2>
 
-    <div class="image-gallery">
-    <div v-for="(image, index) in images" :key="index" class="image-gallery-item">
+    <div data-aos="fade-up" class="image-gallery">
+    <div data-aos="fade-up" v-for="(image, index) in images" :key="index" class="image-gallery-item">
       <div class="shadow-md">
         <img :src="image.src" alt="Image">
         <div class="p-3">
@@ -23,69 +23,14 @@
 
 <script>
 import images from '../content/examples.json';
+
 export default {
     name: 'Examples',
     data() {
       return {
         images: images,
-        imageIndex: 0,
-        imagesPerPage: 10,
       }
     },
-    mounted() {
-    this.loadImages();
-    console.log(this.images);
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    loadImage(path) {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => resolve(path);
-        img.onerror = () => reject(`Error loading image ${path}`);
-        img.src = path;
-      });
-    },
-    async loadImages() {
-      const imagePaths = [
-        "./images/examples/image1.jpg",
-        "./images/examples/image2.jpg",
-        "./images/examples/image3.jpg",
-        "./images/examples/image4.png",
-        "./images/examples/image5.png",
-        "./images/examples/image6.jpg",
-        "./images/examples/image7.jpg",
-        "./images/examples/image8.png",
-      ];
-
-      const imagePrompts = '';
-
-      const startIndex = this.imageIndex;
-      const endIndex = Math.min(
-        startIndex + this.imagesPerPage,
-        imagePaths.length
-      );
-
-      const promises = imagePaths
-        .slice(startIndex, endIndex)
-        .map((path) => this.loadImage(path));
-
-      this.images = this.images.concat(await Promise.all(promises));
-      this.imageIndex = endIndex;
-    },
-    handleScroll() {
-      const windowHeight = window.innerHeight;
-      const scrollY = window.scrollY;
-      const pageHeight = document.documentElement.scrollHeight;
-
-      if (windowHeight + scrollY >= pageHeight) {
-        this.loadImages();
-      }
-    },
-  },
 }
 </script>
 
@@ -123,9 +68,5 @@ export default {
   color:white;
   background-color: #000;
 }
-
-/* .example-image {
-  width: 200px;
-} */
 
 </style>
