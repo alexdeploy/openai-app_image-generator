@@ -1,19 +1,22 @@
 <template>
-    <section class="hero flex flex-col">
+    <section>
         <ImageGenerator />
         <Examples />
+        <Results />
     </section>
 </template>
 
 <script>
 import ImageGenerator from '../ImageGenerator.vue';
 import Examples from '../Examples.vue';
+import Results from '../Results.vue';
 
 export default {
     name: 'Hero',
     components: {
         ImageGenerator,
-        Examples
+        Examples,
+        Results
     }
 }
 </script>
