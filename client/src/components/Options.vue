@@ -1,10 +1,10 @@
 <template>
-    <div class="options-menu">
+ 
+        <div data-aos="fade-in" class="options hidden max-h-screen min-h-screen overflow-y-auto bg-dark_blue">
 
-        <div class="options hiden max-h-80 overflow-y-auto bg-dark_blue rounded-2xl">
-
-            <div id="toucher" class="w-full flex justify-center bg-dark_blue sticky top-0 hover:cursor-grab">
-                <div id="touch-icon" class="w-20 h-1 rounded-xl bg-slate-600 my-3"></div>
+            <div id="toucher" class="w-full flex bg-dark_blue sticky top-0 justify-end">
+                <!-- <div id="touch-icon" class="w-20 h-1 rounded-xl bg-slate-600 my-3"></div> -->
+                <button class="rounded-full bg-white px-2 m-2" @click="showOptions()">X</button>
             </div>
 
             <div class="option px-5" v-for="option in options" :key="option.value">
@@ -21,7 +21,6 @@
     
             </div>
         </div>
-    </div>
 
 </template>
 
@@ -37,6 +36,7 @@ export default {
     data(){
         return {
             options: [
+                {name: 'Amount', icon: '', values: ['1', '2', '3', '4']},
                 {name: 'Size', icon:'', values: ['small', 'medium', 'large']},
                 {name: 'Art', icon: '', values: ['abstract', 'ilustration', 'photo', 'sketch', 'watercolor', 'graffiti', 'caricature', 'painting', 'drawing', 'cartoon', 'comic', 'illustration', 'portrait', 'landscape', 'hyperrealism', 'realism', 'impressionism']},
                 {name: 'Resolution', icon: '', values: ['HD', 'Full-HD', 'Ultra-HD', '4K', '8K', 'Megapixel']},
@@ -55,7 +55,10 @@ export default {
             const elemento = document.querySelector('[value="' + value + '"]');
             elemento.classList.toggle('active');
 
-        }
+        },
+        showOptions(){
+           document.querySelector('.options').classList.toggle('hidden');
+        },
     }
 }
 </script>
