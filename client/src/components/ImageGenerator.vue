@@ -1,9 +1,8 @@
 <template>
-    <div>
-        <h1 class="text-6xl p-5 font-sf_bold text-center">
-                <span>AI</span> Image <span>Generator</span>
-        </h1>
+    <div class="pt-24">
 
+        <h2 class="text-md font-sf_regular py-5">Describe the image you would like to generate 👇</h2>
+<!-- 
         <div id="blackboard" class="w-full rounded-xl bg-gray-900 -z-10 flex justify-center">
             <Loading />
             <div id="empty-msg" class="flex flex-col h-full justify-center items-center">
@@ -13,31 +12,32 @@
             <img src="" alt="" id="image" class="max-h-full p-10">
 
         </div>
-
+ -->
         <!-- options -->
-        <Options :activeOptions="activeOptions" class="z-0" />
+        <!-- <Options :activeOptions="activeOptions" class="z-0" /> -->
 
         <form id="generate-form" class="flex flex-col sm:mx-auto">
 
-            <div class="form-control flex w-full z-10">
+            <div class="form-control flex w-full">
                 <input type="text" id="prompt" placeholder="Polar bear riding a bike">
                 <button type="submit" class="submit-btn bg-blue-500 flex justify-center">
-                    <img src="../assets/icons/send.svg" alt="" class="w-6 self-center">
+                    <img src="../assets/icons/send.svg" alt="" class="w-6 self-center md:hidden">
+                    <span class="hidden md:block self-center mx-7 text-white">Generate</span>
                 </button>
             </div>
 
-            <button class="p-2 bg-gray-800 w-full z-10" @click="showOptions()" type="button" >
+            <button class="p-2 bg-white mt-5 w-full z-10" @click="showOptions()" type="button" >
                 Options
             </button>
 
-            <div class="form-control flex justify-between py-5 z-10 bg-black pb-32">
+            <!-- <div class="form-control flex justify-between py-5 z-10 bg-black pb-32">
                 <label for="size">Select size</label>
                 <select name="size" id="size" class="px-2 py-1 text-gray-300">
                     <option value="small">Small</option>
                     <option value="medium">Medium</option>
                     <option value="large" selected="selected">Large</option>
                 </select>
-            </div>
+            </div> -->
         </form>
         
     </div>
@@ -148,7 +148,6 @@ export default {
 #prompt {
     padding: 12px;
     color: #cbcbcb;
-    border-radius: 0px 0px 0px 0px;
     height: 50px;
 }
 
@@ -158,14 +157,14 @@ export default {
 }
 
 input {
-  border: 1px solid #2b2b2b;
-  background-color: #000000;
-  border-radius: 10px;
+  background-color: #FFF;
+  border-radius: 10px 0px 0px 10px;
   padding: 12px;
   font-size: 16px;
   color: #929292;
   outline: none;
   width: 100%;
+  @apply shadow-sm;
 }
 
 input::placeholder{
@@ -184,7 +183,7 @@ select option {
 }
 
 .submit-btn {
-    /* border-radius: 0px 0px 10px 0px; */
+    border-radius: 0px 10px 10px 0px;
     height: 50px;
     min-width: 50px;
     display: flex;

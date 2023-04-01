@@ -96,7 +96,7 @@ export default {
     /* transform: translateY(-100%); */
     transition: transform 0.3s ease-in-out;
 }
-
+/* 
 .options.show {
   transform: translateY(-100%);
 }
@@ -104,7 +104,7 @@ export default {
 .options.hiden {
     transform: translateY(0);
 }
-
+ */
 .options .option {
   display: block;
   text-decoration: none;
