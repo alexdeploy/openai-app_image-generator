@@ -7,9 +7,9 @@
       with
     </span>
     <div class="flex">
-      <img src="../assets/icons/vue.svg" alt="" class="w-14">
+      <img src="@/assets/icons/vue.svg" alt="" class="w-14">
       <span class="flex self-center text-2xl px-5"> + </span>
-      <img src="../assets/icons/openai.svg" alt="" class="w-14">
+      <img src="@/assets/icons/openai.svg" alt="" class="w-14">
     </div>
   </footer>
 </template>
