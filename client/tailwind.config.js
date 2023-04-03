@@ -9,8 +9,11 @@ module.exports = {
       },
       fontFamily: {
         sf_bold: ['San Francisco Bold'],
-        sf_regular: ['San Francisco Regular']
-
+        sf_regular: ['San Francisco Regular'],
+        roboto_bold: ['Roboto Bold'],
+        roboto_regular: ['Roboto Regular'],
+        roboto_medium: ['Roboto Medium'],
+        roboto_light: ['Roboto Light'],
       }
     },
   },
