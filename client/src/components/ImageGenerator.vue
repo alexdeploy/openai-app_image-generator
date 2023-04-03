@@ -2,46 +2,26 @@
     <div class="pt-24">
         <Loading />
         <Toast v-if="show" :message="toastMessage" />
-        <h2 class="text-md font-sf_regular py-5">Describe the image you would like to generate 👇</h2>
-<!-- 
-        <div id="blackboard" class="w-full rounded-xl bg-gray-900 -z-10 flex justify-center">
-            <Loading />
-            <div id="empty-msg" class="flex flex-col h-full justify-center items-center">
-                <h2 class="text-xl font-sf_regular py-5 text-gray-500">Describe the image you would like to generate</h2>
-                <span>👇</span>
-            </div>
-            <img src="" alt="" id="image" class="max-h-full p-10">
+        <h2 class="text-md font-roboto_light py-5">Describe the image you would like to generate 👇</h2>
 
-        </div>
- -->
-        <!-- options -->
-        <Options :activeOptions="activeOptions" class="fixed top-0 left-0 w-full    " />
+        <Options :activeOptions="activeOptions" class="fixed top-0 left-0" />
 
         <form id="generate-form" class="flex flex-col sm:mx-auto">
 
-            <div class="form-control flex flex-col md:flex-row w-full">
-                <input type="text" id="prompt" placeholder="Polar bear riding a bike" class="hidden md:block">
+            <div class="form-control flex flex-col md:flex-row w-full font-roboto_light shadow-sm">
+                <input type="text" id="prompt" placeholder="Polar bear riding a bike" class="hidden md:block ">
                 <textarea type="text" id="prompt-mobile" placeholder="Enter the prompt" class="md:hidden w-full h-36 shadow-md p-5">
 
                 </textarea>
-                <button type="submit" class="submit-btn bg-blue-500 flex justify-center">
-                    <!-- <img src="../assets/icons/send.svg" alt="" class="w-6 self-center md:hidden"> -->
+                <button type="submit" class="submit-btn bg-blue-500 hover:bg-blue-500/90 flex justify-center font-roboto_regular">
                     <span class="self-center mx-7 text-white">Generate</span>
                 </button>
             </div>
 
-            <button class="p-2 bg-white mt-5 w-full" @click="showOptions()" type="button" >
+            <button class="p-2 bg-white mt-5 w-full font-roboto_regular shadow-sm" @click="showOptions()" type="button" >
                 Options
             </button>
 
-            <!-- <div class="form-control flex justify-between py-5 z-10 bg-black pb-32">
-                <label for="size">Select size</label>
-                <select name="size" id="size" class="px-2 py-1 text-gray-300">
-                    <option value="small">Small</option>
-                    <option value="medium">Medium</option>
-                    <option value="large" selected="selected">Large</option>
-                </select>
-            </div> -->
         </form>
         
     </div>
@@ -182,13 +162,7 @@ export default {
 
 #prompt {
     padding: 12px;
-    color: #cbcbcb;
     height: 50px;
-}
-
-#blackboard {
-    height: 42rem;
-    border-radius: 10px 10px 0px 0px;
 }
 
 input {
@@ -196,14 +170,12 @@ input {
   border-radius: 10px 0px 0px 10px;
   padding: 12px;
   font-size: 16px;
-  color: #929292;
   outline: none;
   width: 100%;
-  @apply shadow-sm;
 }
 
 input::placeholder{
-    color: #ffffff87
+    color: #84848448
 }
 
 select {
