@@ -27,7 +27,7 @@ label {
 }
 
 #app {
-  max-width: 1280px;
+/*   max-width: 1280px; */
   margin: 0 auto;
   font-weight: normal;
 }
@@ -40,4 +40,24 @@ label {
 @font-face {
   font-family: "San Francisco Regular";
   src: url("./fonts/san-francisco-display-regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("./fonts/roboto/Roboto-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("./fonts/roboto/Roboto-Bold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("./fonts/roboto/Roboto-Medium.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url("./fonts/roboto/Roboto-Light.ttf") format('truetype');
 }

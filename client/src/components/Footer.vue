@@ -1,15 +1,15 @@
 <template>
-  <footer class="shadow-sm w-full flex justify-center py-5 flex-col items-center">
+  <footer class="w-full flex justify-center py-5 mt-10 flex-col items-center font-roboto_light text-gray-400">
     <span>
-      Developed by <a href="">@alexdeploy</a>
+      Developed by <a href="https://github.com/alexdeploy" target="_blank" class="text-gray-700 font-roboto_regular">@alexdeploy</a>
     </span>
     <span class="py-4">
       with
     </span>
     <div class="flex">
-      <img src="@/assets/icons/vue.svg" alt="" class="w-14">
-      <span class="flex self-center text-2xl px-5"> + </span>
-      <img src="@/assets/icons/openai.svg" alt="" class="w-14">
+      <img src="@/assets/icons/vue.svg" alt="" class="w-10">
+      <span class="flex self-center text-lg px-5"> & </span>
+      <img src="@/assets/icons/openai.svg" alt="" class="w-10">
     </div>
   </footer>
 </template>
@@ -21,5 +21,10 @@ export default {
 </script>
 
 <style>
+
+footer {
+  /* shadow top */
+  box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.1);
+}
 
 </style>

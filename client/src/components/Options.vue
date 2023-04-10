@@ -1,24 +1,27 @@
 <template>
  
-        <div data-aos="fade-in" class="options hidden max-h-screen min-h-screen overflow-y-auto bg-dark_blue">
+        <div data-aos="fade-in" class="options flex w-full h-full items-center z-30 overflow-y-auto">
 
-            <div id="toucher" class="w-full flex bg-dark_blue sticky top-0 justify-end">
-                <!-- <div id="touch-icon" class="w-20 h-1 rounded-xl bg-slate-600 my-3"></div> -->
-                <button class="rounded-full bg-white px-2 m-2" @click="showOptions()">X</button>
-            </div>
+            <div class="options-menu overflow-y-auto">
 
-            <div class="option px-5" v-for="option in options" :key="option.value">
-    
-                <div class="option-name text-white p-2">{{ option.name }}</div>
-    
-                <div class="option-options flex flex-wrap">
-    
-                    <div id="value" class="bg-gray-900 w-fit px-3 py-1 m-0.5 rounded-full text-white" v-for="optionValue in option.values" :key="optionValue" :value=optionValue @click="activeValue(option.name, optionValue)">
-                        {{ optionValue }}
-                    </div>
-    
+                <div id="toucher" class="flex bg-white sticky top-0 justify-end z-30">
+                    <!-- <div id="touch-icon" class="w-20 h-1 rounded-xl bg-slate-600 my-3"></div> -->
+                    <button class="rounded-full bg-white px-2 m-2" @click="showOptions()">X</button>
                 </div>
     
+                <div class="option px-5 md:px-10" v-for="option in options" :key="option.value">
+        
+                    <div class="option-name text-black p-2 font-roboto_medium text-md">{{ option.name }}</div>
+        
+                    <div class="option-options flex flex-wrap">
+        
+                        <div id="value" class="min-w-fit px-4 py-1 m-1 backdrop-blur-sm bg-white text-black shadow-sm font-roboto_regular" v-for="optionValue in option.values" :key="optionValue" :value=optionValue @click="activeValue(option.name, optionValue)">
+                            {{ optionValue }}
+                        </div>
+        
+                    </div>
+        
+                </div>
             </div>
         </div>
 
@@ -67,7 +70,8 @@ export default {
 
 #value {
     cursor: pointer;
-    border: 1px solid #21242e;
+    border: 1px solid #ccc;
+    border-radius: 10px;
 }
 
 #value.active {
@@ -82,22 +86,36 @@ export default {
   display: none;
 }
 
-.options-menu {
-    position: relative;
-}
 
-.options {
+@media (max-width: 1080px) {
+
+    .options-menu {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin: 0;
-    padding: 0;
     list-style: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    /* transform: translateY(-100%); */
+    background-color: #fafafc;
     transition: transform 0.3s ease-in-out;
+    @apply min-h-screen max-h-screen max-w-full;
+}
+}
+
+    .options {
+        justify-content: center;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(2px);
+        background-color: rgba(255, 255, 255, 0.618);
+    }
+    
+    .options-menu {
+        display: flex;
+        flex-direction: column;
+        background-color: #fafafc;
+        list-style: none;
+        width: 900px;
+        height: 500px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
 }
 /* 
 .options.show {
